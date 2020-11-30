@@ -19,6 +19,7 @@
         let carYPosition = 20;
 
         function moveCarUp() {
+            gameContext.clearRect(20, carYPosition, 150, 100);
             carYPosition--;
             gameContext.beginPath();
             gameContext.fillStyle = '#fa4b2a';
