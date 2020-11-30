@@ -15,12 +15,14 @@
         gameContext.beginPath();
         gameContext.fillStyle = '#fa4b2a';
         gameContext.fillRect(20, 20, 150, 100);
-        
+
         let carYPosition = 20;
 
         function moveCarUp() {
             gameContext.clearRect(20, carYPosition, 150, 100);
-            carYPosition--;
+            if (carYPosition > 0) {
+                carYPosition--;
+            }
             gameContext.beginPath();
             gameContext.fillStyle = '#fa4b2a';
             gameContext.fillRect(20, carYPosition, 150, 100);
