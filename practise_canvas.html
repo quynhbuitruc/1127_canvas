@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="DemoCanvas" width="1000" height="500"></canvas>
+    <script>
+        let canvas = document.getElementById('DemoCanvas');
+        if (canvas.getContext) {
+            let context = canvas.getContext('2d');
+            context.beginPath();
+            context.lineWidth = 5
+            context.lineJoin = "round"
+            context.moveTo(10, 80);
+            context.lineTo(900, 80);
+            context.lineTo(900,480)
+            context.strokeStyle = 'brown'
+            context.stroke();
+        }
+    </script>
+</body>
+
+</html>
