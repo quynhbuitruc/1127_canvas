@@ -40,14 +40,8 @@
             ctx.fill();
         }
 
-        function createMultipleCircle() {
-            for (var i = 0; i < 10; i++) {
-                createCircle();
-            }
-        }
-
-        createMultipleCircle();
-
+        createCircle();
+        let changeCircle = setInterval(createCircle,1000)
     </script>
 </body>
 
