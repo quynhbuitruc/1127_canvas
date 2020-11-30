@@ -13,25 +13,33 @@
     <script>
         let gameContext = document.getElementById("game").getContext("2d");
         let carYPosition = 20
-        let yDistance = 1
+        let carXPosition = 20
+        let yDistance = 10
+        let xDistance = 10
 
         function moveCar() {
-            gameContext.clearRect(20, carYPosition, 150, 100);
-
+            gameContext.clearRect(carXPosition, carYPosition, 150, 100);
             let isTouchTop = carYPosition < 0;
-            let isTouchBottom = carYPosition + 100 > 600;
+            let isTouchBottom = carYPosition + 110 > 600;
+            let isTouchRight = carXPosition + 160 > 800;
+            let isTouchLeft = carXPosition < 0;
             if (isTouchTop || isTouchBottom) {
-                yDistance = -yDistance;
+                yDistance = -yDistance
+            }
+            if (isTouchLeft || isTouchRight) {
+                xDistance = -xDistance
             }
             carYPosition += yDistance;
+            carXPosition += xDistance
+
             drawCar();
         }
-        setInterval(moveCar, 10);
+        setInterval(moveCar, 50);
 
         function drawCar() {
             gameContext.beginPath();
             gameContext.fillStyle = '#fa4b2a';
-            gameContext.fillRect(20, carYPosition, 150, 100);
+            gameContext.fillRect(carXPosition, carYPosition, 150, 100);
         }
     </script>
 </body>
