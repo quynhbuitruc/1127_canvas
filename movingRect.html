@@ -15,6 +15,17 @@
         gameContext.beginPath();
         gameContext.fillStyle = '#fa4b2a';
         gameContext.fillRect(20, 20, 150, 100);
+        
+        let carYPosition = 20;
+
+        function moveCarUp() {
+            carYPosition--;
+            gameContext.beginPath();
+            gameContext.fillStyle = '#fa4b2a';
+            gameContext.fillRect(20, carYPosition, 150, 100);
+        }
+
+        setInterval(moveCarUp, 100);
     </script>
 </body>
 
